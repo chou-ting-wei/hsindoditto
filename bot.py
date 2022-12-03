@@ -13,7 +13,9 @@ def run_discord_bot():
     @client.event
     async def on_ready():
         print('Bot is online!')
-        print('user:', client.user)
+        print('Logged in as', client.user)
+        game = discord.Game('>_<')
+        await client.change_presence(status = discord.Status.idle, activity = game)
         
     @client.event
     async def on_message(message):
@@ -32,10 +34,3 @@ def run_discord_bot():
             await message.channel.send(response)
         
     client.run(jdata['TOKEN'])
-
-
-
-
-# @bot.command()
-# async def ping(ctx):
-#     await ctx.send(f'{round(bot.latency*1000)} (ms)')
