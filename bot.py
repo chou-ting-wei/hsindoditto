@@ -33,4 +33,7 @@ def run_discord_bot():
             response = responses.handle_response(user_message)
             await message.channel.send(response)
         
+        if client.user.mentioned_in(message):
+            await message.channel.send('You can type `%help` for more info.')
+        
     client.run(jdata['TOKEN'])

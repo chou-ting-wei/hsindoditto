@@ -31,7 +31,7 @@ def handle_response(message) -> str:
             if difference.days >= 0:
                 ret_message += ('\n距離 `' + countdown_list[i]['event'] + '` 還剩下 `' + str(difference.days) + '` 天')
         
-        ret_message += '\n:rip:'
+        ret_message += '\n<:rip:900761668542414879>'
         return ret_message
     
     if now_message == 'help':
