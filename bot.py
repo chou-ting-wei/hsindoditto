@@ -19,6 +19,8 @@ def run_discord_bot():
             now = datetime.datetime.now()
             midnight = (now + datetime.timedelta(days = 1)).replace(hour=0, minute=0, second=0, microsecond=0)
             wait_time = (midnight - now).total_seconds()
+            if wait_time > 86400:
+                wait_time -= 86400
             print('Next daily message:', wait_time, '(s)')
             await asyncio.sleep(wait_time)
             

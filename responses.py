@@ -37,4 +37,15 @@ def handle_response(message) -> str:
     if now_message == 'help':
         return 'Available commands: ping, roll, countdown, help.'
     
+    if now_message.startswith('admin'):
+        tmp = now_message.split(' ', 1)
+        
+        if len(tmp) == 1:
+            return 'o_o'
+        
+        if tmp[1] == 'time':
+            return str(datetime.datetime.today())
+        
+        return '>_<'
+    
     return 'ʕ•ᴥ•ʔ'
