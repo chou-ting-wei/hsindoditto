@@ -24,9 +24,11 @@ def run_discord_bot():
             print('Next daily message:', wait_time, '(s)')
             await asyncio.sleep(wait_time)
             
-            channel = bot.get_channel(1043935672207159316)
+            channel1 = bot.get_channel(1043935672207159316)
+            channel2 = bot.get_channel(1050409753202929664)
             response = responses.handle_response('countdown')
-            await channel.send(response)
+            await channel1.send(response)
+            await channel2.send(response)
     
     @bot.event
     async def on_ready():
