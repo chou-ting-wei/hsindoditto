@@ -51,8 +51,12 @@ def run_discord_bot():
         
         if user_message[0] == '%':
             user_message = user_message[1:]
-            response = responses.handle_response(user_message)
-            await message.channel.send(response)
+            if str(message.author) == 'userwei#8366':
+                response = responses.handle_response(user_message, True)
+                await message.channel.send(response)
+            else:
+                response = responses.handle_response(user_message, False)
+                await message.channel.send(response)
         
         if bot.user.mentioned_in(message):
             await message.channel.send('You can type `%help` for more info.')
