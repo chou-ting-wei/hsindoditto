@@ -54,6 +54,9 @@ def run_discord_bot():
             if str(message.author) == 'userwei#8366':
                 response = responses.handle_response(user_message, True)
                 await message.channel.send(response)
+            # elif str(message.author) == '一豪#9288':
+            #     response = responses.handle_response(user_message, True)
+            #     await message.channel.send(response)
             else:
                 response = responses.handle_response(user_message, False)
                 await message.channel.send(response)
